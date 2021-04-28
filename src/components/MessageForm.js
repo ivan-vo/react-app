@@ -2,24 +2,35 @@ import React, { Component } from 'react'
 
 class MessageForm extends Component {
 
+    state = {};
+
     onSubmitHandler = (event) => {
         event.preventDefault();
         console.log('Submitted');
-        let body = 'Let my people go!';
-        this.props.onSubmit({
-            body: body
+        this.props.onSubmit(this.state);
+        this.setState({ body: ''});
+    }
+
+    onChange = (event) => {
+        this.setState({
+            body: event.target.value
         })
     }
 
     render() {
         return (
-            <form  
+            <form
                 onSubmit={this.onSubmitHandler}
-                id="message-form" 
+                id="message-form"
                 autoComplete="off">
-                    <input type="text" name="message" />
-                    <button type="submit">
-                        Send
+                <input
+                    type="text"
+                    name="message"
+                    onChange={this.onChange}
+                    value={this.state.body}
+                />
+                <button type="submit">
+                    Send
                     </button>
             </form>
         )
