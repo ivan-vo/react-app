@@ -7,21 +7,33 @@ class App extends Component {
   user ={
     name:'Ivan Voronov'
   }
+
+  messages = [
+    {
+      body: 'Welcome',
+      authorName: 'Ivan Voronov',
+      avatar: ''
+    },
+    {
+      body: 'Hi',
+      authorName: 'Slava Link',
+      avatar: ''
+    },
+    {
+      body: 'Cool!',
+      authorName: 'Vlad Lord',
+      avatar: ''
+    },
+  ]
   render(){
 
     return (
       <div id="chat">
         <Header user={this.user}/>
         <div id="messages">
-          <Message/>
-          <div class="message">
-            <img src="" alt="" />
-            <div class="info">
-              <div class="authorName">Petia Som</div>
-              <div class="body">Hello</div>
-              <div class="time">16:03</div>
-            </div>
-          </div>
+          <Message message={this.messages[0]}/>
+          <Message message={this.messages[1]}/>
+          <Message message={this.messages[2]}/>
         </div>
         <form id="message-form" autocomplete="off">
           <input type="text" name="message" />
