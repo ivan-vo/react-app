@@ -1,23 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div id="chat">
+      <header>
+        <div class="user">
+          <img src="" alt="" />
+          <sapan class="name">Ivan Voronov</sapan>
+        </div>
+        <button class="logout" onclick="logout()">Logout</button>
       </header>
+      <div id="messages">
+        <div class="message">
+          <img src="" alt="" />
+          <div class="info">
+            <div class="authorName">Ivan Vo</div>
+            <div class="body">Welcome</div>
+            <div class="time">16:00</div>
+          </div>
+        </div>
+        <div class="message">
+          <img src="" alt="" />
+          <div class="info">
+            <div class="authorName">Petia Som</div>
+            <div class="body">Hello</div>
+            <div class="time">16:03</div>
+          </div>
+        </div>
+      </div>
+      <form id="message-form" autocomplete="off">
+        <input type="text" name="message" />
+        <button type="submit">
+          Send
+        </button>
+      </form>
     </div>
   );
 }

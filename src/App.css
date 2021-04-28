@@ -1,38 +1,84 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#chat {
+  height: 100%;
+  flex: 1;
   display: flex;
   flex-direction: column;
+}
+
+/* HEADER */
+header {
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  flex: 0 0 3rem;
+  padding: .5rem 0;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: auto;
+}
+header>.user {
+  display: flex;
+  align-items: center;
+}
+header>.user>img{
+  height: 2rem;
+  border-radius: 25%;
+  margin-right: .5rem;
+}
+header .logout{
+  font-size: 1rem;
+  padding: .5rem;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+/* MESSAGES */
+#messages{
+  overflow: auto;
+  margin-bottom: .5rem;
+}
+.message{
+  margin-top: .5rem;
+  padding: .5rem;
+  background-color: lightblue;
+  border-radius: 10px;
+  float: left;
+  clear: both;
+}
+.message>img{
+  width: 2rem;
+  float: left;
+}
+.message>.info{
+  margin-left: 2.5rem;
+}
+.message>.info>.authorName{
+  font-weight: bold;
+}
+.message>.info>.time{
+  font-size: 75%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* MESSAGE FORM */
+form{
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+}
+input[name="message"],button[type="submit"] {
+  border: 1px solid skyblue;
+  outline: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+input[name="message"]{
+  background-color: azure;
+  flex: 1 1;
+  width: 1px;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+button[type="submit"] {
+  background-color: lightskyblue;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
 }
