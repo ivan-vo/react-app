@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header';
-import Message from './components/Message';
+import MessageForm from './components/MessageForm';
+import Messages from './components/Messages';
 
 class App extends Component {
   user ={
@@ -25,22 +26,18 @@ class App extends Component {
       avatar: ''
     },
   ]
+
+  sendMessage = (message) => {
+    console.log(message);
+  }
+
   render(){
 
     return (
       <div id="chat">
         <Header user={this.user}/>
-        <div id="messages">
-          <Message message={this.messages[0]}/>
-          <Message message={this.messages[1]}/>
-          <Message message={this.messages[2]}/>
-        </div>
-        <form id="message-form" autocomplete="off">
-          <input type="text" name="message" />
-          <button type="submit">
-            Send
-          </button>
-        </form>
+        <Messages messages={this.messages}/>
+        <MessageForm onSubmit={this.sendMessage}/>
       </div>
     );
   }
